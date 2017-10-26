@@ -9,6 +9,7 @@ import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
 const data = {
   menus: [
     { text: 'Главная', icon: <Assessment/>, link: '/dashboard' },
+    { text: 'Писания', icon: <Assessment/>, link: '/dashboard' },
     { text: 'Авторизация  ', icon: <PermIdentity/>, link: '/login' }
   ],
   dashBoardPage: {

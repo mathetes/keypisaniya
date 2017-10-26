@@ -8,7 +8,7 @@ const DashboardPage = () => {
       <h3 style={globalStyles.navigation}>Главная / Панель управления</h3>
 
       <div className="row">
-
+          Страница навигации
       </div>
 
     </div>

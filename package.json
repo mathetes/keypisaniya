@@ -32,7 +32,15 @@
     "react-dom": "15.4.2",
     "react-router": "3.0.2",
     "react-tap-event-plugin": "2.0.1",
-    "recharts": "0.20.8"
+    "react-visibility-toggles": "1.2.0",
+    "reactabular": "8.3.0",
+    "reactabular-column-extensions": "8.9.3",
+    "reactabular-easy": "9.2.0",
+    "reactabular-resizable": "8.12.0",
+    "recharts": "0.20.8",
+    "searchtabular": "1.7.0",
+    "selectabular": "2.1.0",
+    "table-resolver": "3.2.0"
   },
   "devDependencies": {
     "autoprefixer": "6.7.3",

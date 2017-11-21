@@ -6,11 +6,9 @@ const DashboardPage = () => {
   return (
     <div>
       <h3 style={globalStyles.navigation}>Главная / Панель управления</h3>
-
       <div className="row">
-
+        <p>Пустой компонент</p>
       </div>
-
     </div>
   );
 };

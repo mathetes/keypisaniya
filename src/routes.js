@@ -12,7 +12,7 @@ export default (
     <Route path="/" component={App}>
       <IndexRoute component={Dashboard}/>
       <Route path="dashboard" component={Dashboard}/>
-    <Route path="evo" component={Evolution}/>
+      <Route path="evo" component={Evolution}/>
       <Route path="*" component={NotFoundPage}/>
     </Route>
   </Route>

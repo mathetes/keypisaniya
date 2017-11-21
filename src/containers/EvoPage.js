@@ -6,7 +6,7 @@ class Evolution extends Component {
   render() {
 
     return (
-      <p>Компонент<p/>
+      <p>Компонент</p>
     );
   }
 }

@@ -6,6 +6,7 @@ import LoginPage from './containers/LoginPage';
 import Dashboard from './containers/DashboardPage';
 import Evolution from './containers/EvoPage';
 import Fixed from './containers/FixedPage';
+import Example from './containers/ExamplePage';
 
 export default (
   <Route>
@@ -14,7 +15,8 @@ export default (
       <IndexRoute component={Dashboard}/>
       <Route path="dashboard" component={Dashboard}/>
       <Route path="evo" component={Evolution}/>
-    <Route path="fixed" component={Fixed}/>
+      <Route path="fixed" component={Fixed}/>
+      <Route path="example" component={Example}/>
       <Route path="*" component={NotFoundPage}/>
     </Route>
   </Route>

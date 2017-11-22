@@ -11,6 +11,7 @@ const data = {
     { text: 'Главная', icon: <Assessment/>, link: '/dashboard' },
     { text: 'Таблица', icon: <Assessment/>, link: '/evo' },
     { text: 'Фикс', icon: <Assessment/>, link: '/fixed' },
+    { text: 'Пример', icon: <Assessment/>, link: '/example' },
     { text: 'Авторизация  ', icon: <PermIdentity/>, link: '/login' }
   ],
   dashBoardPage: {

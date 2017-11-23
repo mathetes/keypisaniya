@@ -7,6 +7,7 @@ import Dashboard from './containers/DashboardPage';
 import Evolution from './containers/EvoPage';
 import Fixed from './containers/FixedPage';
 import Example from './containers/ExamplePage';
+import Easy from './containers/EasyPage';
 
 export default (
   <Route>
@@ -17,6 +18,7 @@ export default (
       <Route path="evo" component={Evolution}/>
       <Route path="fixed" component={Fixed}/>
       <Route path="example" component={Example}/>
+      <Route path="easy" component={Easy}/>
       <Route path="*" component={NotFoundPage}/>
     </Route>
   </Route>

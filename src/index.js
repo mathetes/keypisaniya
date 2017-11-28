@@ -9,6 +9,16 @@ require('./favicon.ico');
 import './styles.scss';
 import 'font-awesome/css/font-awesome.css';
 import 'flexboxgrid/css/flexboxgrid.css';
+import 'purecss/_base.scss';
+import 'purecss/_buttons.scss';
+import 'purecss/_forms.scss';
+import 'purecss/_grids.scss';
+import 'purecss/_grids-responsive.scss';
+import 'purecss/_menus.scss';
+import 'purecss/_tables.scss';
+
+
+
 
 injectTapEventPlugin();
 

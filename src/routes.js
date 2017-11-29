@@ -7,6 +7,7 @@ import Dashboard from './containers/DashboardPage';
 import Evolution from './containers/EvoPage';
 import Fixed from './containers/FixedPage';
 import Resize from './containers/ResizingPage';
+import Toggling from './containers/TogglingPage';
 
 export default (
   <Route>
@@ -17,6 +18,7 @@ export default (
       <Route path="evo" component={Evolution}/>
       <Route path="fixed" component={Fixed}/>
       <Route path="resizing" component={Resize}/>
+      <Route path="toggling" component={Toggling}/>
       <Route path="*" component={NotFoundPage}/>
     </Route>
   </Route>

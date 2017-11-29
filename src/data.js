@@ -12,6 +12,7 @@ const data = {
     { text: 'Таблица', icon: <Assessment/>, link: '/evo' },
     { text: 'Фикс', icon: <Assessment/>, link: '/fixed' },
     { text: 'Ресайз', icon: <Assessment/>, link: '/resizing' },
+    { text: 'Выбор колонок', icon: <Assessment/>, link: '/toggling' },
     { text: 'Авторизация  ', icon: <PermIdentity/>, link: '/login' }
   ],
   dashBoardPage: {

@@ -7,7 +7,6 @@ import { generateRows } from './helpers';
 import * as resolve from 'table-resolver';
 
 
-
 const schema = {
   type: 'object',
   properties: {

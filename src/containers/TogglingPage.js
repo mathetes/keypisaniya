@@ -11,18 +11,25 @@ class Toggling extends Component {
       this.state = {
         columns: [
           {
-            property: 'name',
+            property: 'theme',
             header: {
-              label: 'Name'
+              label: 'Тема'
             },
             visible: true
           },
           {
-            property: 'age',
+            property: 'book',
             header: {
-              label: 'Age'
+              label: 'Книга'
             },
-            visible: false
+            visible: true
+          },
+          {
+            property: 'keyverse',
+            header: {
+              label: 'Кл.стих'
+            },
+            visible: true
           },
           {
             property: 'color',
@@ -32,26 +39,29 @@ class Toggling extends Component {
             cell: {
               transforms: [color => ({ style: { color } })]
             },
-            visible: true
+            visible: false
           }
         ],
         rows: [
           {
             id: 100,
-            name: 'Adam',
-            age: 12,
-            color: 'red'
+            book: 'Бытие',
+            theme: 'Начало всего',
+            keyverse: 12,
+            color: '#f754e1'
           },
           {
             id: 101,
-            name: 'Brian',
-            age: 44,
+            book: 'Исход',
+            theme: 'Искупление',
+            keyverse: 44,
             color: 'green'
           },
           {
             id: 102,
-            name: 'Mike',
-            age: 25,
+            book: 'Левит',
+            theme: 'Святость',
+            keyverse: 25,
             color: 'blue'
           }
         ]

@@ -13,6 +13,7 @@ const data = {
     { text: 'Фикс', icon: <Assessment/>, link: '/fixed' },
     { text: 'Ресайз', icon: <Assessment/>, link: '/resizing' },
     { text: 'Выбор колонок', icon: <Assessment/>, link: '/toggling' },
+    { text: 'Сборка', icon: <Assessment/>, link: '/mixed' },
     { text: 'Авторизация  ', icon: <PermIdentity/>, link: '/login' }
   ],
   dashBoardPage: {

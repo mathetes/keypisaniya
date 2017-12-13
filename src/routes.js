@@ -9,6 +9,7 @@ import Evolution from './containers/EvoPage';
 import Fixed from './containers/FixedPage';
 import Resize from './containers/ResizingPage';
 import Toggling from './containers/TogglingPage';
+import RTable from './containers/TablePage';
 
 export default (
   <Route>

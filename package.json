@@ -45,7 +45,8 @@
     "redux": "3.7.2",
     "schema2object": "0.4.0",
     "searchtabular": "1.7.0",
-    "segmentize": "0.4.1"
+    "segmentize": "0.4.1",
+    "treetabular": "3.5.0"
   },
   "devDependencies": {
     "autoprefixer": "6.7.3",

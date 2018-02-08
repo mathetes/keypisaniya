@@ -5,6 +5,7 @@ import * as resizable from 'reactabular-resizable';
 import uuid from 'uuid';
 import { cloneDeep } from 'lodash';
 import VisibilityToggles from 'react-visibility-toggles';
+import * as search from 'searchtabular';
 import { generateRows } from './helpers';
 import * as resolve from 'table-resolver';
 
@@ -15,6 +16,8 @@ class Mixed extends React.Component {
     super(props);
 
     this.state = {
+      searchColumn: 'all',
+      query: {}, // Search query
       columns: [
         {
           property: 'theme',
@@ -154,8 +157,13 @@ class Mixed extends React.Component {
     return `column-${this.id}-${i}`;
   }
   render() {
-    const { rows, columns } = this.state;
-
+    const components = {
+      header: {
+        cell: FixedWidthHeader
+      }
+    };
+    const { searchColumn, rows, columns, query } = this.state;
+    const searchedRows = search.multipleColumns({ columns, query })(rows);
     const resolvedColumns = resolve.columnChildren({ columns });
     const resolvedRows = resolve.resolve({
         columns: resolvedColumns,
@@ -168,7 +176,18 @@ class Mixed extends React.Component {
         columns={resolvedColumns}
         columns={columns.filter(column => column.visible)}
         style={{ width: 'auto' }}
+        components={components}
       >
+      <span>Search</span>
+      <search.Field
+        column={searchColumn}
+        query={query}
+        columns={columns}
+        rows={rows}
+        onColumnChange={searchColumn => this.setState({ searchColumn })}
+        onChange={query => this.setState({ query })}
+      />
+
         <VisibilityToggles
           columns={columns}
           onToggleColumn={this.onToggleColumn}
@@ -186,7 +205,7 @@ class Mixed extends React.Component {
         />
 
         <Sticky.Body
-          rows={resolvedRows}
+          rows={searchedRows, resolvedRows} rowKey="id"
           rowKey="id"
           onRow={this.onRow}
           style={{
@@ -212,6 +231,38 @@ class Mixed extends React.Component {
     columns[columnIndex].visible = !columns[columnIndex].visible;
 
     this.setState({ columns });
+  }
+}
+
+class FixedWidthHeader extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.widthSet = false;
+    this.state = {
+      style: {}
+    };
+  }
+  componentDidUpdate() {
+    if (this.widthSet) {
+      return;
+    }
+
+    const width = this.refs.header.clientWidth;
+
+    // Wait till width is available and set then
+    if (width) {
+      this.widthSet = true;
+
+      this.setState({ // eslint-disable-line react/no-did-update-set-state
+        style: { width }
+      });
+    }
+  }
+  render() {
+    return (
+      <th style={this.state.style} ref="header">{this.props.children}</th>
+    );
   }
 }
 

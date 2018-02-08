@@ -10,29 +10,6 @@ import * as resolve from 'table-resolver';
 
 
 
-const schema = {
-  type: 'object',
-  properties: {
-    id: {
-      type: 'string'
-    },
-    name: {
-      type: 'string'
-    },
-    address: {
-      type: 'string'
-    },
-    company: {
-      type: 'string'
-    },
-    age: {
-      type: 'integer'
-    }
-  },
-  required: ['id', 'name', 'age', 'company']
-};
-const rows = generateRows(100, schema);
-
 class Mixed extends React.Component {
   constructor(props) {
     super(props);
@@ -95,9 +72,7 @@ class Mixed extends React.Component {
         }
       ]
     };
-    
-    this.tableHeader = null;
-    this.tableBody = null;
+    this.onToggleColumn = this.onToggleColumn.bind(this);
   }
   componentWillMount() {
     this.resizableHelper = resizable.helper({
@@ -131,9 +106,9 @@ class Mixed extends React.Component {
 
     return [
       {
-        property: 'name',
+        property: 'theme`',
         header: {
-          label: 'Name',
+          label: '`Тема`',
           formatters: [
             resizableFormatter
           ]
@@ -191,12 +166,14 @@ class Mixed extends React.Component {
       <Table.Provider
         className="pure-table pure-table-striped"
         columns={resolvedColumns}
+        columns={columns.filter(column => column.visible)}
         style={{ width: 'auto' }}
       >
         <VisibilityToggles
           columns={columns}
           onToggleColumn={this.onToggleColumn}
         />
+
         <Sticky.Header
           style={{
             maxWidth: 800
@@ -228,6 +205,13 @@ class Mixed extends React.Component {
     return {
       className: rowIndex % 2 ? 'odd-row' : 'even-row',
     };
+  }
+  onToggleColumn({ columnIndex }) {
+    const columns = cloneDeep(this.state.columns);
+
+    columns[columnIndex].visible = !columns[columnIndex].visible;
+
+    this.setState({ columns });
   }
 }
 
